@@ -2,16 +2,14 @@
   display: flex;
   flex-direction: column;
   gap: 9px;
-  min-height: 0;
 }
 
 .day-column__day-name {
+  width: max-content;
   font-size: 10px;
   font-weight: 600;
   text-transform: uppercase;
   color: var(--color-day-name);
-  letter-spacing: 0;
-  line-height: 1.36;
 }
 
 .day-column__day-name--today {
@@ -32,7 +30,6 @@
   font-size: 11px;
   font-weight: 600;
   color: var(--color-day-number);
-  line-height: 1.36;
 }
 
 .day-column__date--today {

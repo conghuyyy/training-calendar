@@ -34,7 +34,6 @@
   text-overflow: ellipsis;
   flex: 1;
   min-width: 0;
-  line-height: 1.36;
 }
 
 .workout-card__menu-wrapper {

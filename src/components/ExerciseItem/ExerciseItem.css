@@ -22,10 +22,10 @@
   font-size: 13px;
   font-weight: 600;
   color: var(--color-exercise-name);
-  line-height: 1.36;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  text-align: right;
 }
 
 .exercise-item__meta {
@@ -40,14 +40,12 @@
   font-size: 10px;
   font-weight: 700;
   color: var(--color-set-count);
-  line-height: 1.36;
 }
 
 .exercise-item__sets {
   font-size: 10px;
   font-weight: 400;
   color: var(--color-set-detail);
-  line-height: 1.36;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
