@@ -8,8 +8,9 @@
 
 :root {
   /* ── Typography ── */
-  --font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-  sans-serif;
+  --font-family:
+    'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    sans-serif;
 
   /* ── Base text colors ── */
   --color-text: #333;

@@ -56,11 +56,10 @@ const WorkoutCard: FunctionComponent<{
                 {...exerciseDropProvided.droppableProps}
                 className={`workout-card__exercise-list ${exerciseDropSnapshot.isDraggingOver ? 'workout-card__exercise-list--over' : ''}`}
               >
-                {workoutExercises.length === 0 && !exerciseDropSnapshot.isDraggingOver && (
-                  <div className="workout-card__empty">
-                    No exercises yet
-                  </div>
-                )}
+                {workoutExercises.length === 0 &&
+                  !exerciseDropSnapshot.isDraggingOver && (
+                    <div className="workout-card__empty">No exercises yet</div>
+                  )}
                 {workoutExercises.map((exercise, exerciseIndex) => (
                   <ExerciseItem
                     key={exercise.id}

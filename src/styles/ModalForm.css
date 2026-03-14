@@ -26,8 +26,9 @@
   border: 1px solid var(--color-border-input);
   border-radius: 6px;
   outline: none;
-  transition: border-color 0.15s ease,
-  box-shadow 0.15s ease;
+  transition:
+    border-color 0.15s ease,
+    box-shadow 0.15s ease;
 }
 
 .modal-form__input::placeholder {
@@ -59,9 +60,10 @@
   border-radius: 6px;
   border: 1px solid transparent;
   cursor: pointer;
-  transition: background 0.15s ease,
-  border-color 0.15s ease,
-  color 0.15s ease;
+  transition:
+    background 0.15s ease,
+    border-color 0.15s ease,
+    color 0.15s ease;
   white-space: nowrap;
 }
 
