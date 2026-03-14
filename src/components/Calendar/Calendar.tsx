@@ -1,37 +1,42 @@
 import './Calendar.css';
-import { lazy } from 'react';
+import { lazy, useState } from 'react';
 import { DragDropContext } from '@hello-pangea/dnd';
 import DayColumn from 'components/DayColumn';
-import { useCalendar } from './use-calendar';
+import { initialExercises } from 'data/exercises';
+import { initialWorkouts } from 'data/workouts';
+import { initialSchedule } from 'data/schedule';
+import { useWeekNavigation } from './use-week-navigation';
+import { useDragDrop } from './use-drag-drop';
+import { useWorkoutModal } from './use-workout-modal';
+import { useExerciseModal } from './use-exercise-modal';
 import type { FunctionComponent } from 'react';
 
 const WorkoutModal = lazy(() => import('modals/WorkoutModal'));
 const ExerciseModal = lazy(() => import('modals/ExerciseModal'));
 
 const Calendar: FunctionComponent = () => {
+  const [schedule, setSchedule] = useState<Schedule.Week>(initialSchedule);
+  const [workouts, setWorkouts] = useState<Workout.Map>(initialWorkouts);
+  const [exercises, setExercises] = useState<Exercise.Map>(initialExercises);
+
+  const { weekDays, weekRange, goToPreviousWeek, goToNextWeek, goToToday } = useWeekNavigation();
+  const { handleDragEnd } = useDragDrop(setSchedule, setWorkouts);
   const {
-    weekDays,
-    weekRange,
-    schedule,
-    workouts,
-    exercises,
     workoutModal,
-    exerciseModal,
-    handleDragEnd,
     handleAddWorkout,
     handleEditWorkout,
     handleSaveWorkout,
     handleDeleteWorkout,
     closeWorkoutModal,
+  } = useWorkoutModal(schedule, workouts, setWorkouts, setSchedule, setExercises);
+  const {
+    exerciseModal,
     handleAddExercise,
     handleEditExercise,
     handleSaveExercise,
     handleDeleteExercise,
     closeExerciseModal,
-    goToPreviousWeek,
-    goToNextWeek,
-    goToToday,
-  } = useCalendar();
+  } = useExerciseModal(workouts, setWorkouts, setExercises);
 
   return (
     <div className="calendar">

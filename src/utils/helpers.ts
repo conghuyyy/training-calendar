@@ -8,13 +8,6 @@ export function reorder<T>(list: T[], fromIndex: number, toIndex: number): T[] {
   return result;
 }
 
-/** Removes all falsy values from an array. */
-export function compact<T>(
-  list: (T | null | undefined | false | 0 | '')[],
-): T[] {
-  return list.filter(Boolean) as T[];
-}
-
 /** Maps over an array and removes any null/undefined results in one pass. */
 export function mapCompact<T, U>(
   list: T[],

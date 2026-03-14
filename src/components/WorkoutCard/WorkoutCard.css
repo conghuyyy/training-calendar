@@ -11,8 +11,6 @@
   background: var(--background-card-dragging);
 }
 
-/* ── Header ── */
-
 .workout-card__header {
   display: flex;
   align-items: center;
@@ -38,8 +36,6 @@
   min-width: 0;
   line-height: 1.36;
 }
-
-/* ── Three-dot menu ── */
 
 .workout-card__menu-wrapper {
   position: relative;
@@ -78,8 +74,6 @@
 .workout-card__dots-button:hover .workout-card__dot {
   background: var(--color-menu-dots-active);
 }
-
-/* ── Dropdown ── */
 
 .workout-card__dropdown {
   position: absolute;
@@ -132,8 +126,6 @@
   background: var(--background-danger-light);
 }
 
-/* ── Exercise list ── */
-
 .workout-card__exercise-list {
   min-height: 2px;
   border-radius: 3px;
@@ -146,8 +138,6 @@
 .workout-card__exercise-list--over {
   background: var(--color-primary-ghost-light);
 }
-
-/* ── Add exercise button ── */
 
 .workout-card__add-exercise-button {
   display: flex;

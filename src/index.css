@@ -36,7 +36,6 @@
   --color-exercise-name: #000;
   --color-set-count: #919cad;
   --color-set-detail: #95a6b7;
-  --color-set-label: #868e96;
   --color-add-button: #a0a8b1;
 
   /* ── Backgrounds ── */
@@ -59,7 +58,6 @@
 
   /* ── Icon / Muted controls ── */
   --color-icon-muted: #aaa;
-  --color-icon-faint: #ccc;
 
   /* ── Danger ── */
   --color-danger: #e53e3e;
