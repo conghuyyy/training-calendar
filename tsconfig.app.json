@@ -38,7 +38,8 @@
       "utils/*": ["src/utils/*"],
       "enums/*": ["src/enums/*"],
       "hooks/*": ["src/hooks/*"],
-      "contexts/*": ["src/contexts/*"]
+      "contexts/*": ["src/contexts/*"],
+      "modals/*": ["src/modals/*"]
     }
   },
   "include": ["src"]

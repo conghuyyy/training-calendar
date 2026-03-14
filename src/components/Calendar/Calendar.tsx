@@ -1,13 +1,12 @@
 import './Calendar.css';
-import { lazy, Suspense } from 'react';
+import { lazy } from 'react';
 import { DragDropContext } from '@hello-pangea/dnd';
 import DayColumn from 'components/DayColumn';
 import { useCalendar } from './use-calendar';
 import type { FunctionComponent } from 'react';
 
-const LazyModal = lazy(() => import('components/Modal'));
-const LazyWorkoutForm = lazy(() => import('components/WorkoutForm'));
-const LazyExerciseForm = lazy(() => import('components/ExerciseForm'));
+const WorkoutModal = lazy(() => import('modals/WorkoutModal'));
+const ExerciseModal = lazy(() => import('modals/ExerciseModal'));
 
 const Calendar: FunctionComponent = () => {
   const {
@@ -79,38 +78,22 @@ const Calendar: FunctionComponent = () => {
       </DragDropContext>
 
       {workoutModal.isOpen && (
-        <Suspense fallback={null}>
-          <LazyModal
-            isOpen={workoutModal.isOpen}
-            onClose={closeWorkoutModal}
-            title={workoutModal.workout ? 'Edit Workout' : 'Add Workout'}
-          >
-            <LazyWorkoutForm
-              workout={workoutModal.workout}
-              onSave={handleSaveWorkout}
-              onCancel={closeWorkoutModal}
-            />
-          </LazyModal>
-        </Suspense>
+        <WorkoutModal
+          isOpen={workoutModal.isOpen}
+          workout={workoutModal.workout}
+          onSave={handleSaveWorkout}
+          onClose={closeWorkoutModal}
+        />
       )}
 
       {exerciseModal.isOpen && (
-        <Suspense fallback={null}>
-          <LazyModal
-            isOpen={exerciseModal.isOpen}
-            onClose={closeExerciseModal}
-            title={exerciseModal.exercise ? 'Edit Exercise' : 'Add Exercise'}
-          >
-            <LazyExerciseForm
-              exercise={exerciseModal.exercise}
-              onSave={handleSaveExercise}
-              onCancel={closeExerciseModal}
-              onDelete={
-                exerciseModal.exercise ? handleDeleteExercise : undefined
-              }
-            />
-          </LazyModal>
-        </Suspense>
+        <ExerciseModal
+          isOpen={exerciseModal.isOpen}
+          exercise={exerciseModal.exercise}
+          onSave={handleSaveExercise}
+          onDelete={exerciseModal.exercise ? handleDeleteExercise : undefined}
+          onClose={closeExerciseModal}
+        />
       )}
     </div>
   );
