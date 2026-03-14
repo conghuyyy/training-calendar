@@ -22,6 +22,7 @@ const WorkoutCardMenu: FunctionComponent<{
       }
     };
     document.addEventListener('mousedown', handleClickOutside);
+
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, [menuOpen, closeMenu]);
 

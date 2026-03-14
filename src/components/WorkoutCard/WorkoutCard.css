@@ -139,6 +139,14 @@
   background: var(--color-primary-ghost-light);
 }
 
+.workout-card__empty {
+  font-size: 11px;
+  color: var(--color-text-placeholder);
+  text-align: center;
+  padding: 8px 4px;
+  user-select: none;
+}
+
 .workout-card__add-exercise-button {
   display: flex;
   align-items: center;

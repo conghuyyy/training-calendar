@@ -3,7 +3,7 @@ import { Droppable } from '@hello-pangea/dnd';
 import WorkoutCard from 'components/WorkoutCard';
 import { getDayName, getDayOfMonth, isToday } from 'utils/date';
 import { mapCompact, noop } from 'utils/helpers';
-import type { FunctionComponent } from 'react';
+import type { FunctionComponent, ReactElement } from 'react';
 
 const DayColumn: FunctionComponent<{
   dateKey: string;
@@ -32,6 +32,31 @@ const DayColumn: FunctionComponent<{
 
   const dayWorkouts = mapCompact(workoutIds, (id) => workouts[id]);
 
+  const renderColumnHeader = (): ReactElement => (
+    <div className="day-column__top-row">
+      <span
+        className={`day-column__date ${isTodayDate ? 'day-column__date--today' : ''}`}
+      >
+        {String(dayOfMonth).padStart(2, '0')}
+      </span>
+      <button
+        className="day-column__add-button"
+        onClick={() => onAddWorkout(dateKey)}
+        title="Add workout"
+      >
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+          <ellipse cx="6" cy="6" rx="6" ry="6" fill="currentColor" />
+          <path
+            fillRule="evenodd"
+            clipRule="evenodd"
+            d="M7 4.93V2.96H5V4.93H3V6.91H5V8.88H7V6.91H9V4.93H7Z"
+            fill="white"
+          />
+        </svg>
+      </button>
+    </div>
+  );
+
   return (
     <div className="day-column">
       <span
@@ -41,29 +66,7 @@ const DayColumn: FunctionComponent<{
       </span>
 
       <div className="day-column__body">
-        <div className="day-column__top-row">
-          <span
-            className={`day-column__date ${isTodayDate ? 'day-column__date--today' : ''}`}
-          >
-            {String(dayOfMonth).padStart(2, '0')}
-          </span>
-          <button
-            className="day-column__add-button"
-            onClick={() => onAddWorkout(dateKey)}
-            title="Add workout"
-          >
-            <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-              <ellipse cx="6" cy="6" rx="6" ry="6" fill="currentColor" />
-              <path
-                fillRule="evenodd"
-                clipRule="evenodd"
-                d="M7 4.93V2.96H5V4.93H3V6.91H5V8.88H7V6.91H9V4.93H7Z"
-                fill="white"
-              />
-            </svg>
-          </button>
-        </div>
-
+        {renderColumnHeader()}
         <Droppable droppableId={dateKey} type="WORKOUT">
           {(provided, snapshot) => (
             <div
