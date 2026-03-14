@@ -2,6 +2,7 @@ import './ExerciseModal.css';
 import 'styles/ModalForm.css';
 import { useState } from 'react';
 import Modal from 'components/Modal';
+import { DEFAULT_SET } from 'config/constants';
 import { last, updateAt, removeAt, noop } from 'utils/helpers';
 import type { FunctionComponent } from 'react';
 
@@ -14,7 +15,7 @@ const ExerciseModal: FunctionComponent<{
 }> = ({ isOpen, exercise, onSave, onDelete, onClose = noop }) => {
   const [name, setName] = useState(exercise?.name ?? '');
   const [sets, setSets] = useState<Exercise.Set[]>(
-    exercise?.sets ?? [{ weight: 0, reps: 10 }],
+    exercise?.sets ?? [{ ...DEFAULT_SET }],
   );
 
   const handleSubmit = (event: React.FormEvent): void => {
@@ -42,10 +43,7 @@ const ExerciseModal: FunctionComponent<{
 
   const addSet = (): void => {
     const lastSet = last(sets);
-    setSets((prev) => [
-      ...prev,
-      lastSet ? { ...lastSet } : { weight: 0, reps: 10 },
-    ]);
+    setSets((prev) => [...prev, lastSet ? { ...lastSet } : { ...DEFAULT_SET }]);
   };
 
   return (

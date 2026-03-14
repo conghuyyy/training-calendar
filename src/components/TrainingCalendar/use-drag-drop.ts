@@ -1,4 +1,5 @@
 import { reorder } from 'utils/helpers';
+import { DND_TYPE_WORKOUT, DND_TYPE_EXERCISE } from 'config/constants';
 import type { DropResult } from '@hello-pangea/dnd';
 import type { Dispatch, SetStateAction } from 'react';
 
@@ -88,10 +89,10 @@ export const useDragDrop = (
       return;
     }
 
-    if (type === 'WORKOUT') {
+    if (type === DND_TYPE_WORKOUT) {
       handleWorkoutDrag(source, destination);
     }
-    if (type === 'EXERCISE') {
+    if (type === DND_TYPE_EXERCISE) {
       handleExerciseDrag(source, destination);
     }
   };

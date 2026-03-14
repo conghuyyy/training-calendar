@@ -2,6 +2,7 @@ import './WorkoutCard.css';
 import { Draggable, Droppable } from '@hello-pangea/dnd';
 import ExerciseItem from 'components/ExerciseItem';
 import WorkoutCardMenu from './WorkoutCardMenu';
+import { DND_TYPE_EXERCISE } from 'config/constants';
 import { mapCompact, noop } from 'utils/helpers';
 import type { FunctionComponent } from 'react';
 
@@ -49,7 +50,7 @@ const WorkoutCard: FunctionComponent<{
             />
           </div>
 
-          <Droppable droppableId={workout.id} type="EXERCISE">
+          <Droppable droppableId={workout.id} type={DND_TYPE_EXERCISE}>
             {(exerciseDropProvided, exerciseDropSnapshot) => (
               <div
                 ref={exerciseDropProvided.innerRef}

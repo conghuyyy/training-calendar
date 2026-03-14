@@ -13,13 +13,21 @@ exercises through an intuitive drag-and-drop interface.
 
 ![Calendar View](screenshots/calendar-view.png)
 
-### Workout card with exercises
+### Dragging a workout card
 
-![Workout Card](screenshots/workout-card.png)
+![Dragging Workout Card](screenshots/dragging-workout-card.png)
 
-### Add / Edit exercise modal
+### Dragging an exercise
 
-![Exercise Modal](screenshots/exercise-modal.png)
+![Dragging Exercise](screenshots/dragging-excercise.png)
+
+### Add new workout
+
+![New Workout](screenshots/new-workout.png)
+
+### Add new exercise
+
+![New Exercise](screenshots/new-exercise.png)
 
 ## Features
 
@@ -59,7 +67,7 @@ Open [http://localhost:5173/training-calendar/](http://localhost:5173/training-c
 ### Other Commands
 
 | Command          | Description                  |
-|------------------|------------------------------|
+| ---------------- | ---------------------------- |
 | `pnpm build`     | Production build to `dist/`  |
 | `pnpm preview`   | Preview the production build |
 | `pnpm lint`      | Run ESLint                   |

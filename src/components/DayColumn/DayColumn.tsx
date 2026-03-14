@@ -1,6 +1,7 @@
 import './DayColumn.css';
 import { Droppable } from '@hello-pangea/dnd';
 import WorkoutCard from 'components/WorkoutCard';
+import { DND_TYPE_WORKOUT } from 'config/constants';
 import { getDayName, getDayOfMonth, isToday } from 'utils/date';
 import { mapCompact, noop } from 'utils/helpers';
 import type { FunctionComponent, ReactElement } from 'react';
@@ -67,7 +68,7 @@ const DayColumn: FunctionComponent<{
 
       <div className="day-column__body">
         {renderColumnHeader()}
-        <Droppable droppableId={dateKey} type="WORKOUT">
+        <Droppable droppableId={dateKey} type={DND_TYPE_WORKOUT}>
           {(provided, snapshot) => (
             <div
               ref={provided.innerRef}

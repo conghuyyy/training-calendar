@@ -1,3 +1,11 @@
+import {
+  DAYS_IN_WEEK,
+  SUNDAY_JS_INDEX,
+  MONDAY_FROM_SUNDAY_OFFSET,
+  MONDAY_JS_INDEX,
+  MONDAY_BASED_SUNDAY_INDEX,
+} from 'config/constants';
+
 const DAY_NAMES = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
 
 export function formatDateKey(date: Date): string {
@@ -10,12 +18,13 @@ export function formatDateKey(date: Date): string {
 export function getWeekDays(referenceDate: Date = new Date()): string[] {
   const date = new Date(referenceDate);
   const day = date.getDay();
-  const diff = day === 0 ? -6 : 1 - day;
+  const diff =
+    day === SUNDAY_JS_INDEX ? MONDAY_FROM_SUNDAY_OFFSET : MONDAY_JS_INDEX - day;
   const monday = new Date(date);
   monday.setDate(date.getDate() + diff);
 
   const days: string[] = [];
-  for (let i = 0; i < 7; i++) {
+  for (let i = 0; i < DAYS_IN_WEEK; i++) {
     const d = new Date(monday);
     d.setDate(monday.getDate() + i);
     days.push(formatDateKey(d));
@@ -30,7 +39,8 @@ export function isToday(dateKey: string): boolean {
 export function getDayName(dateKey: string): string {
   const date = new Date(dateKey + 'T12:00:00');
   const dayIndex = date.getDay();
-  const mondayBasedIndex = dayIndex === 0 ? 6 : dayIndex - 1;
+  const mondayBasedIndex =
+    dayIndex === SUNDAY_JS_INDEX ? MONDAY_BASED_SUNDAY_INDEX : dayIndex - 1;
   return DAY_NAMES[mondayBasedIndex];
 }
 
@@ -67,6 +77,6 @@ export function getWeekRange(days: string[]): string {
 
 export function addWeeks(dateKey: string, weeks: number): Date {
   const date = new Date(dateKey + 'T12:00:00');
-  date.setDate(date.getDate() + weeks * 7);
+  date.setDate(date.getDate() + weeks * DAYS_IN_WEEK);
   return date;
 }
