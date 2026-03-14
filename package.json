@@ -11,7 +11,9 @@
     "clean": "rm -rf dist build",
     "prepare": "husky",
     "typecheck": "tsc --noEmit",
-    "format": "prettier . --write"
+    "format": "prettier . --write",
+    "predeploy": "pnpm run build",
+    "deploy": "pnpx gh-pages -d dist"
   },
   "dependencies": {
     "@hello-pangea/dnd": "18.0.1",
