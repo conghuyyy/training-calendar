@@ -15,7 +15,9 @@ const WorkoutModal: FunctionComponent<{
   const handleSubmit = (event: React.FormEvent): void => {
     event.preventDefault();
     const trimmedName = name.trim();
-    if (!trimmedName) return;
+    if (!trimmedName) {
+      return;
+    }
     onSave(trimmedName);
   };
 

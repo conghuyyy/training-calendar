@@ -1,10 +1,11 @@
-import './Calendar.css';
+import './TrainingCalendar.css';
 import { lazy, useState } from 'react';
 import { DragDropContext } from '@hello-pangea/dnd';
 import DayColumn from 'components/DayColumn';
 import { initialExercises } from 'data/exercises';
 import { initialWorkouts } from 'data/workouts';
 import { initialSchedule } from 'data/schedule';
+import CalendarHeader from './CalendarHeader';
 import { useWeekNavigation } from './use-week-navigation';
 import { useDragDrop } from './use-drag-drop';
 import { useWorkoutModal } from './use-workout-modal';
@@ -14,12 +15,13 @@ import type { FunctionComponent } from 'react';
 const WorkoutModal = lazy(() => import('modals/WorkoutModal'));
 const ExerciseModal = lazy(() => import('modals/ExerciseModal'));
 
-const Calendar: FunctionComponent = () => {
+const TrainingCalendar: FunctionComponent = () => {
   const [schedule, setSchedule] = useState<Schedule.Week>(initialSchedule);
   const [workouts, setWorkouts] = useState<Workout.Map>(initialWorkouts);
   const [exercises, setExercises] = useState<Exercise.Map>(initialExercises);
 
-  const { weekDays, weekRange, goToPreviousWeek, goToNextWeek, goToToday } = useWeekNavigation();
+  const { weekDays, weekRange, goToPreviousWeek, goToNextWeek, goToToday } =
+    useWeekNavigation();
   const { handleDragEnd } = useDragDrop(setSchedule, setWorkouts);
   const {
     workoutModal,
@@ -28,7 +30,13 @@ const Calendar: FunctionComponent = () => {
     handleSaveWorkout,
     handleDeleteWorkout,
     closeWorkoutModal,
-  } = useWorkoutModal(schedule, workouts, setWorkouts, setSchedule, setExercises);
+  } = useWorkoutModal(
+    schedule,
+    workouts,
+    setWorkouts,
+    setSchedule,
+    setExercises,
+  );
   const {
     exerciseModal,
     handleAddExercise,
@@ -40,28 +48,12 @@ const Calendar: FunctionComponent = () => {
 
   return (
     <div className="calendar">
-      <div className="calendar__header">
-        <div className="calendar__navigation">
-          <button
-            className="calendar__navigation-button"
-            onClick={goToPreviousWeek}
-            title="Previous week"
-          >
-            ‹
-          </button>
-          <button
-            className="calendar__navigation-button"
-            onClick={goToNextWeek}
-            title="Next week"
-          >
-            ›
-          </button>
-          <button className="calendar__today-button" onClick={goToToday}>
-            Today
-          </button>
-        </div>
-        <h2 className="calendar__title">{weekRange}</h2>
-      </div>
+      <CalendarHeader
+        weekRange={weekRange}
+        onPreviousWeek={goToPreviousWeek}
+        onNextWeek={goToNextWeek}
+        onToday={goToToday}
+      />
 
       <DragDropContext onDragEnd={handleDragEnd}>
         <div className="calendar__grid">
@@ -104,4 +96,4 @@ const Calendar: FunctionComponent = () => {
   );
 };
 
-export default Calendar;
+export default TrainingCalendar;

@@ -19,7 +19,9 @@ const ExerciseModal: FunctionComponent<{
   const handleSubmit = (event: React.FormEvent): void => {
     event.preventDefault();
     const trimmedName = name.trim();
-    if (!trimmedName || sets.length === 0) return;
+    if (!trimmedName || sets.length === 0) {
+      return;
+    }
     onSave(trimmedName, sets);
   };
 

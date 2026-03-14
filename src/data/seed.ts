@@ -6,9 +6,7 @@
  */
 import { generateId } from 'utils/helpers';
 
-// ── Exercise IDs ──────────────────────────────────────────────────────────────
-
-const eIds = {
+const exerciseIds = {
   benchPress: generateId(),
   inclineDumbbellPress: generateId(),
   tricepPushdown: generateId(),
@@ -27,9 +25,7 @@ const eIds = {
   hipFlexorStretch: generateId(),
 };
 
-// ── Workout IDs ───────────────────────────────────────────────────────────────
-
-const wIds = {
+const workoutIds = {
   chestDay: generateId(),
   legDay: generateId(),
   backShoulders: generateId(),
@@ -38,11 +34,9 @@ const wIds = {
   morningStretch: generateId(),
 };
 
-// ── Exercises ─────────────────────────────────────────────────────────────────
-
 export const initialExercises: Exercise.Map = {
-  [eIds.benchPress]: {
-    id: eIds.benchPress,
+  [exerciseIds.benchPress]: {
+    id: exerciseIds.benchPress,
     name: 'Bench Press Medium Grip',
     sets: [
       { weight: 50, reps: 5 },
@@ -50,8 +44,8 @@ export const initialExercises: Exercise.Map = {
       { weight: 70, reps: 5 },
     ],
   },
-  [eIds.inclineDumbbellPress]: {
-    id: eIds.inclineDumbbellPress,
+  [exerciseIds.inclineDumbbellPress]: {
+    id: exerciseIds.inclineDumbbellPress,
     name: 'Incline Dumbbell Press',
     sets: [
       { weight: 30, reps: 8 },
@@ -59,8 +53,8 @@ export const initialExercises: Exercise.Map = {
       { weight: 40, reps: 8 },
     ],
   },
-  [eIds.tricepPushdown]: {
-    id: eIds.tricepPushdown,
+  [exerciseIds.tricepPushdown]: {
+    id: exerciseIds.tricepPushdown,
     name: 'Tricep Pushdown',
     sets: [
       { weight: 40, reps: 12 },
@@ -68,8 +62,8 @@ export const initialExercises: Exercise.Map = {
       { weight: 60, reps: 10 },
     ],
   },
-  [eIds.barbellSquat]: {
-    id: eIds.barbellSquat,
+  [exerciseIds.barbellSquat]: {
+    id: exerciseIds.barbellSquat,
     name: 'Barbell Squat',
     sets: [
       { weight: 135, reps: 5 },
@@ -77,8 +71,8 @@ export const initialExercises: Exercise.Map = {
       { weight: 225, reps: 5 },
     ],
   },
-  [eIds.legPress]: {
-    id: eIds.legPress,
+  [exerciseIds.legPress]: {
+    id: exerciseIds.legPress,
     name: 'Leg Press',
     sets: [
       { weight: 200, reps: 10 },
@@ -86,16 +80,16 @@ export const initialExercises: Exercise.Map = {
       { weight: 300, reps: 8 },
     ],
   },
-  [eIds.calfRaises]: {
-    id: eIds.calfRaises,
+  [exerciseIds.calfRaises]: {
+    id: exerciseIds.calfRaises,
     name: 'Calf Raises',
     sets: [
       { weight: 100, reps: 15 },
       { weight: 120, reps: 15 },
     ],
   },
-  [eIds.deadlift]: {
-    id: eIds.deadlift,
+  [exerciseIds.deadlift]: {
+    id: exerciseIds.deadlift,
     name: 'Deadlift',
     sets: [
       { weight: 135, reps: 5 },
@@ -103,8 +97,8 @@ export const initialExercises: Exercise.Map = {
       { weight: 315, reps: 3 },
     ],
   },
-  [eIds.pullUps]: {
-    id: eIds.pullUps,
+  [exerciseIds.pullUps]: {
+    id: exerciseIds.pullUps,
     name: 'Pull Ups',
     sets: [
       { weight: 0, reps: 8 },
@@ -112,8 +106,8 @@ export const initialExercises: Exercise.Map = {
       { weight: 0, reps: 6 },
     ],
   },
-  [eIds.overheadPress]: {
-    id: eIds.overheadPress,
+  [exerciseIds.overheadPress]: {
+    id: exerciseIds.overheadPress,
     name: 'Overhead Press',
     sets: [
       { weight: 65, reps: 8 },
@@ -121,8 +115,8 @@ export const initialExercises: Exercise.Map = {
       { weight: 85, reps: 6 },
     ],
   },
-  [eIds.dumbbellCurl]: {
-    id: eIds.dumbbellCurl,
+  [exerciseIds.dumbbellCurl]: {
+    id: exerciseIds.dumbbellCurl,
     name: 'Dumbbell Curl',
     sets: [
       { weight: 25, reps: 10 },
@@ -130,8 +124,8 @@ export const initialExercises: Exercise.Map = {
       { weight: 35, reps: 8 },
     ],
   },
-  [eIds.latPulldown]: {
-    id: eIds.latPulldown,
+  [exerciseIds.latPulldown]: {
+    id: exerciseIds.latPulldown,
     name: 'Lat Pulldown',
     sets: [
       { weight: 100, reps: 10 },
@@ -139,24 +133,24 @@ export const initialExercises: Exercise.Map = {
       { weight: 140, reps: 8 },
     ],
   },
-  [eIds.cableFlyes]: {
-    id: eIds.cableFlyes,
+  [exerciseIds.cableFlyes]: {
+    id: exerciseIds.cableFlyes,
     name: 'Cable Flyes',
     sets: [
       { weight: 20, reps: 12 },
       { weight: 25, reps: 12 },
     ],
   },
-  [eIds.plankHold]: {
-    id: eIds.plankHold,
+  [exerciseIds.plankHold]: {
+    id: exerciseIds.plankHold,
     name: 'Plank Hold',
     sets: [
       { weight: 0, reps: 60 },
       { weight: 0, reps: 60 },
     ],
   },
-  [eIds.russianTwist]: {
-    id: eIds.russianTwist,
+  [exerciseIds.russianTwist]: {
+    id: exerciseIds.russianTwist,
     name: 'Russian Twist',
     sets: [
       { weight: 15, reps: 20 },
@@ -164,65 +158,61 @@ export const initialExercises: Exercise.Map = {
       { weight: 15, reps: 20 },
     ],
   },
-  [eIds.shoulderStretch]: {
-    id: eIds.shoulderStretch,
+  [exerciseIds.shoulderStretch]: {
+    id: exerciseIds.shoulderStretch,
     name: 'Shoulder Stretch',
     sets: [{ weight: 0, reps: 30 }],
   },
-  [eIds.hipFlexorStretch]: {
-    id: eIds.hipFlexorStretch,
+  [exerciseIds.hipFlexorStretch]: {
+    id: exerciseIds.hipFlexorStretch,
     name: 'Hip Flexor Stretch',
     sets: [{ weight: 0, reps: 30 }],
   },
 };
 
-// ── Workouts ──────────────────────────────────────────────────────────────────
-
 export const initialWorkouts: Workout.Map = {
-  [wIds.chestDay]: {
-    id: wIds.chestDay,
+  [workoutIds.chestDay]: {
+    id: workoutIds.chestDay,
     name: 'Chest Day - with Arm exercises',
     exerciseIds: [
-      eIds.benchPress,
-      eIds.inclineDumbbellPress,
-      eIds.tricepPushdown,
+      exerciseIds.benchPress,
+      exerciseIds.inclineDumbbellPress,
+      exerciseIds.tricepPushdown,
     ],
   },
-  [wIds.legDay]: {
-    id: wIds.legDay,
+  [workoutIds.legDay]: {
+    id: workoutIds.legDay,
     name: 'Leg Day',
-    exerciseIds: [eIds.barbellSquat, eIds.legPress, eIds.calfRaises],
+    exerciseIds: [exerciseIds.barbellSquat, exerciseIds.legPress, exerciseIds.calfRaises],
   },
-  [wIds.backShoulders]: {
-    id: wIds.backShoulders,
+  [workoutIds.backShoulders]: {
+    id: workoutIds.backShoulders,
     name: 'Back & Shoulders',
-    exerciseIds: [eIds.deadlift, eIds.pullUps, eIds.overheadPress],
+    exerciseIds: [exerciseIds.deadlift, exerciseIds.pullUps, exerciseIds.overheadPress],
   },
-  [wIds.upperBody]: {
-    id: wIds.upperBody,
+  [workoutIds.upperBody]: {
+    id: workoutIds.upperBody,
     name: 'Upper Body',
-    exerciseIds: [eIds.dumbbellCurl, eIds.latPulldown, eIds.cableFlyes],
+    exerciseIds: [exerciseIds.dumbbellCurl, exerciseIds.latPulldown, exerciseIds.cableFlyes],
   },
-  [wIds.coreCardio]: {
-    id: wIds.coreCardio,
+  [workoutIds.coreCardio]: {
+    id: workoutIds.coreCardio,
     name: 'Core & Cardio',
-    exerciseIds: [eIds.plankHold, eIds.russianTwist],
+    exerciseIds: [exerciseIds.plankHold, exerciseIds.russianTwist],
   },
-  [wIds.morningStretch]: {
-    id: wIds.morningStretch,
+  [workoutIds.morningStretch]: {
+    id: workoutIds.morningStretch,
     name: 'Morning Stretch Routine',
-    exerciseIds: [eIds.shoulderStretch, eIds.hipFlexorStretch],
+    exerciseIds: [exerciseIds.shoulderStretch, exerciseIds.hipFlexorStretch],
   },
 };
 
-// ── Schedule ──────────────────────────────────────────────────────────────────
-
 export const initialSchedule: Schedule.Week = {
-  '2026-03-09': [wIds.chestDay, wIds.morningStretch],
-  '2026-03-10': [wIds.legDay],
-  '2026-03-11': [wIds.backShoulders],
-  '2026-03-12': [wIds.upperBody],
-  '2026-03-13': [wIds.coreCardio],
+  '2026-03-09': [workoutIds.chestDay, workoutIds.morningStretch],
+  '2026-03-10': [workoutIds.legDay],
+  '2026-03-11': [workoutIds.backShoulders],
+  '2026-03-12': [workoutIds.upperBody],
+  '2026-03-13': [workoutIds.coreCardio],
   '2026-03-14': [],
   '2026-03-15': [],
 };

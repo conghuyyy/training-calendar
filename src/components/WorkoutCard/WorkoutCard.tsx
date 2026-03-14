@@ -1,7 +1,7 @@
 import './WorkoutCard.css';
-import { useState, useRef, useEffect, useCallback } from 'react';
 import { Draggable, Droppable } from '@hello-pangea/dnd';
 import ExerciseItem from 'components/ExerciseItem';
+import WorkoutCardMenu from './WorkoutCardMenu';
 import { mapCompact, noop } from 'utils/helpers';
 import type { FunctionComponent } from 'react';
 
@@ -24,28 +24,7 @@ const WorkoutCard: FunctionComponent<{
   onAddExercise = noop,
   onDeleteWorkout = noop,
 }) => {
-  const [menuOpen, setMenuOpen] = useState(false);
-  const menuRef = useRef<HTMLDivElement>(null);
-
-  const closeMenu = useCallback((): void => setMenuOpen(false), []);
-
-  useEffect(() => {
-    if (!menuOpen) {
-      return;
-    }
-    const handleClickOutside = (event: MouseEvent): void => {
-      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
-        closeMenu();
-      }
-    };
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, [menuOpen, closeMenu]);
-
-  const workoutExercises = mapCompact(
-    workout.exerciseIds,
-    (id) => exercises[id],
-  );
+  const workoutExercises = mapCompact(workout.exerciseIds, (id) => exercises[id]);
 
   return (
     <Draggable draggableId={workout.id} index={index}>
@@ -59,42 +38,12 @@ const WorkoutCard: FunctionComponent<{
             <span className="workout-card__name" title={workout.name}>
               {workout.name}
             </span>
-            <div className="workout-card__menu-wrapper" ref={menuRef}>
-              <button
-                className="workout-card__dots-button"
-                onClick={(event) => {
-                  event.stopPropagation();
-                  setMenuOpen((prev) => !prev);
-                }}
-                title="Options"
-              >
-                <span className="workout-card__dot" />
-                <span className="workout-card__dot" />
-                <span className="workout-card__dot" />
-              </button>
-              {menuOpen && (
-                <div className="workout-card__dropdown">
-                  <button
-                    className="workout-card__dropdown-item"
-                    onClick={() => {
-                      onEditWorkout(workout);
-                      closeMenu();
-                    }}
-                  >
-                    Edit Workout
-                  </button>
-                  <button
-                    className="workout-card__dropdown-item workout-card__dropdown-item--danger"
-                    onClick={() => {
-                      onDeleteWorkout(workout.id, dateKey);
-                      closeMenu();
-                    }}
-                  >
-                    Delete Workout
-                  </button>
-                </div>
-              )}
-            </div>
+            <WorkoutCardMenu
+              workout={workout}
+              dateKey={dateKey}
+              onEdit={onEditWorkout}
+              onDelete={onDeleteWorkout}
+            />
           </div>
 
           <Droppable droppableId={workout.id} type="EXERCISE">

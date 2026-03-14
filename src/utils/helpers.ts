@@ -11,11 +11,11 @@ export function reorder<T>(list: T[], fromIndex: number, toIndex: number): T[] {
 /** Maps over an array and removes any null/undefined results in one pass. */
 export function mapCompact<T, U>(
   list: T[],
-  fn: (item: T) => U | null | undefined,
+  mapper: (item: T) => U | null | undefined,
 ): NonNullable<U>[] {
   const result: NonNullable<U>[] = [];
   for (const item of list) {
-    const value = fn(item);
+    const value = mapper(item);
     if (value != null) {
       result.push(value as NonNullable<U>);
     }
