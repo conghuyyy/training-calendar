@@ -1,0 +1,58 @@
+.exercise-item {
+  display: flex;
+  flex-direction: column;
+  background: var(--background-page);
+  border: 1px solid var(--color-border-exercise);
+  border-radius: 3px;
+  box-shadow: var(--shadow-exercise);
+  padding: 6px 8px;
+  cursor: grab;
+  user-select: none;
+}
+
+.exercise-item:active {
+  cursor: grabbing;
+}
+
+.exercise-item--dragging {
+  background: var(--background-page);
+  box-shadow: var(--shadow-exercise-dragging);
+}
+
+.exercise-item__name {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-exercise-name);
+  line-height: 1.36;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.exercise-item__meta {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  margin-top: 2px;
+}
+
+.exercise-item__set-count {
+  flex-shrink: 0;
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--color-set-count);
+  line-height: 1.36;
+}
+
+.exercise-item__sets {
+  font-size: 10px;
+  font-weight: 400;
+  color: var(--color-set-detail);
+  line-height: 1.36;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: right;
+  flex: 1;
+  min-width: 0;
+}

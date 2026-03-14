@@ -1,0 +1,83 @@
+.day-column {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  min-height: 0;
+}
+
+.day-column__day-name {
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--color-day-name);
+  letter-spacing: 0;
+  line-height: 1.36;
+}
+
+.day-column__day-name--today {
+  color: var(--color-today);
+}
+
+.day-column__body {
+  background: var(--background-day-column);
+  border-radius: 6px;
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.day-column__date {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--color-day-number);
+  line-height: 1.36;
+}
+
+.day-column__date--today {
+  font-weight: 700;
+  color: var(--color-today);
+}
+
+.day-column__top-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 10px 0;
+}
+
+.day-column__add-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  color: var(--color-add-button);
+  opacity: 0;
+  transition: opacity 0.15s;
+}
+
+.day-column:hover .day-column__add-button,
+.day-column__add-button:focus-visible {
+  opacity: 1;
+}
+
+.day-column__add-button:hover {
+  color: var(--color-today);
+}
+
+.day-column__content {
+  padding: 8px;
+  flex: 1;
+  overflow-y: auto;
+  min-height: 60px;
+  border-radius: 3px;
+  transition: background 0.15s;
+}
+
+.day-column__content--over {
+  background: var(--color-primary-ghost);
+}
