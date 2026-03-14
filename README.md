@@ -29,6 +29,14 @@ exercises through an intuitive drag-and-drop interface.
 
 ![New Exercise](screenshots/new-exercise.png)
 
+### Edit workout
+
+![Edit Workout](screenshots/edit-workout.png)
+
+### Edit exercise
+
+![Edit Exercise](screenshots/edit-exercise.png)
+
 ## Features
 
 - **Weekly calendar view** — navigate between weeks with previous/next buttons or jump to today
