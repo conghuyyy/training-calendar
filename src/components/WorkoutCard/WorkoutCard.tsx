@@ -24,7 +24,10 @@ const WorkoutCard: FunctionComponent<{
   onAddExercise = noop,
   onDeleteWorkout = noop,
 }) => {
-  const workoutExercises = mapCompact(workout.exerciseIds, (id) => exercises[id]);
+  const workoutExercises = mapCompact(
+    workout.exerciseIds,
+    (id) => exercises[id],
+  );
 
   return (
     <Draggable draggableId={workout.id} index={index}>

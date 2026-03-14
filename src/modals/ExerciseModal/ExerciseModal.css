@@ -1,47 +1,4 @@
-.exercise-form {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.exercise-form__field {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.exercise-form__label {
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--color-text-secondary);
-  letter-spacing: 0.02em;
-}
-
-.exercise-form__input {
-  width: 100%;
-  padding: 8px 12px;
-  font-size: 14px;
-  font-family: var(--font-family);
-  color: var(--color-text);
-  background: var(--background-page);
-  border: 1px solid var(--color-border-input);
-  border-radius: 6px;
-  outline: none;
-  transition:
-    border-color 0.15s ease,
-    box-shadow 0.15s ease;
-}
-
-.exercise-form__input::placeholder {
-  color: var(--color-text-placeholder);
-}
-
-.exercise-form__input:focus {
-  border-color: var(--color-primary-form);
-  box-shadow: 0 0 0 3px var(--color-primary-shadow);
-}
-
-.exercise-form__input--narrow {
+.modal-form__input--narrow {
   width: 80px;
   flex-shrink: 0;
 }
@@ -98,67 +55,13 @@
   background: var(--color-primary-ghost);
 }
 
-.exercise-form__actions {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 8px;
-  padding-top: 4px;
-  border-top: 1px solid var(--color-border);
-}
-
-.exercise-form__button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 7px 16px;
-  font-size: 13px;
-  font-weight: 600;
-  font-family: var(--font-family);
-  border-radius: 6px;
-  border: 1px solid transparent;
-  cursor: pointer;
-  transition:
-    background 0.15s ease,
-    border-color 0.15s ease,
-    color 0.15s ease;
-  white-space: nowrap;
-}
-
-.exercise-form__button:disabled {
-  opacity: 0.45;
-  cursor: not-allowed;
-}
-
-.exercise-form__button--primary {
-  background: var(--color-primary-form);
-  color: #fff;
-  border-color: var(--color-primary-form);
-}
-
-.exercise-form__button--primary:not(:disabled):hover {
-  background: var(--color-primary-dark);
-  border-color: var(--color-primary-dark);
-}
-
-.exercise-form__button--secondary {
-  background: var(--background-page);
-  color: var(--color-text-secondary);
-  border-color: var(--color-border-input);
-}
-
-.exercise-form__button--secondary:hover {
-  background: var(--background-hover);
-  border-color: var(--color-border-hover);
-}
-
-.exercise-form__button--danger {
+.modal-form__button--danger {
   background: var(--background-danger-light);
   color: var(--color-danger);
   border-color: var(--color-danger);
 }
 
-.exercise-form__button--danger:hover {
+.modal-form__button--danger:hover {
   background: var(--color-danger);
   color: #fff;
 }

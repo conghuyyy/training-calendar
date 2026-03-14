@@ -31,4 +31,3 @@ const CalendarHeader: FunctionComponent<{
 );
 
 export default CalendarHeader;
-

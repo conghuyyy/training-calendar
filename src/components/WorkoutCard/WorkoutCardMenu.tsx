@@ -66,5 +66,3 @@ const WorkoutCardMenu: FunctionComponent<{
 };
 
 export default WorkoutCardMenu;
-
-

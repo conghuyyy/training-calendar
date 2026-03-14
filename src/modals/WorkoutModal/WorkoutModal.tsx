@@ -1,4 +1,4 @@
-import './WorkoutModal.css';
+import 'styles/ModalForm.css';
 import { useState } from 'react';
 import Modal from 'components/Modal';
 import { noop } from 'utils/helpers';
@@ -22,12 +22,16 @@ const WorkoutModal: FunctionComponent<{
   };
 
   return (
-    <Modal isOpen={isOpen} onClose={onClose} title={workout ? 'Edit Workout' : 'Add Workout'}>
-      <form className="workout-form" onSubmit={handleSubmit}>
-        <div className="workout-form__field">
-          <label className="workout-form__label">Workout Name</label>
+    <Modal
+      isOpen={isOpen}
+      onClose={onClose}
+      title={workout ? 'Edit Workout' : 'Add Workout'}
+    >
+      <form className="modal-form" onSubmit={handleSubmit}>
+        <div className="modal-form__field">
+          <label className="modal-form__label">Workout Name</label>
           <input
-            className="workout-form__input"
+            className="modal-form__input"
             type="text"
             value={name}
             onChange={(event) => setName(event.target.value)}
@@ -35,17 +39,17 @@ const WorkoutModal: FunctionComponent<{
             autoFocus
           />
         </div>
-        <div className="workout-form__actions">
+        <div className="modal-form__actions">
           <button
             type="button"
-            className="workout-form__button workout-form__button--secondary"
+            className="modal-form__button modal-form__button--secondary"
             onClick={onClose}
           >
             Cancel
           </button>
           <button
             type="submit"
-            className="workout-form__button workout-form__button--primary"
+            className="modal-form__button modal-form__button--primary"
             disabled={!name.trim()}
           >
             {workout ? 'Save' : 'Add Workout'}

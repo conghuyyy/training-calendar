@@ -183,17 +183,29 @@ export const initialWorkouts: Workout.Map = {
   [workoutIds.legDay]: {
     id: workoutIds.legDay,
     name: 'Leg Day',
-    exerciseIds: [exerciseIds.barbellSquat, exerciseIds.legPress, exerciseIds.calfRaises],
+    exerciseIds: [
+      exerciseIds.barbellSquat,
+      exerciseIds.legPress,
+      exerciseIds.calfRaises,
+    ],
   },
   [workoutIds.backShoulders]: {
     id: workoutIds.backShoulders,
     name: 'Back & Shoulders',
-    exerciseIds: [exerciseIds.deadlift, exerciseIds.pullUps, exerciseIds.overheadPress],
+    exerciseIds: [
+      exerciseIds.deadlift,
+      exerciseIds.pullUps,
+      exerciseIds.overheadPress,
+    ],
   },
   [workoutIds.upperBody]: {
     id: workoutIds.upperBody,
     name: 'Upper Body',
-    exerciseIds: [exerciseIds.dumbbellCurl, exerciseIds.latPulldown, exerciseIds.cableFlyes],
+    exerciseIds: [
+      exerciseIds.dumbbellCurl,
+      exerciseIds.latPulldown,
+      exerciseIds.cableFlyes,
+    ],
   },
   [workoutIds.coreCardio]: {
     id: workoutIds.coreCardio,

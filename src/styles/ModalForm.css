@@ -1,23 +1,23 @@
-.workout-form {
+.modal-form {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
 
-.workout-form__field {
+.modal-form__field {
   display: flex;
   flex-direction: column;
   gap: 8px;
 }
 
-.workout-form__label {
+.modal-form__label {
   font-size: 13px;
   font-weight: 600;
   color: var(--color-text-secondary);
   letter-spacing: 0.02em;
 }
 
-.workout-form__input {
+.modal-form__input {
   width: 100%;
   padding: 8px 12px;
   font-size: 14px;
@@ -32,16 +32,16 @@
     box-shadow 0.15s ease;
 }
 
-.workout-form__input::placeholder {
+.modal-form__input::placeholder {
   color: var(--color-text-placeholder);
 }
 
-.workout-form__input:focus {
+.modal-form__input:focus {
   border-color: var(--color-primary-form);
   box-shadow: 0 0 0 3px var(--color-primary-shadow);
 }
 
-.workout-form__actions {
+.modal-form__actions {
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -50,7 +50,7 @@
   border-top: 1px solid var(--color-border);
 }
 
-.workout-form__button {
+.modal-form__button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -68,29 +68,29 @@
   white-space: nowrap;
 }
 
-.workout-form__button:disabled {
+.modal-form__button:disabled {
   opacity: 0.45;
   cursor: not-allowed;
 }
 
-.workout-form__button--primary {
+.modal-form__button--primary {
   background: var(--color-primary-form);
   color: #fff;
   border-color: var(--color-primary-form);
 }
 
-.workout-form__button--primary:not(:disabled):hover {
+.modal-form__button--primary:not(:disabled):hover {
   background: var(--color-primary-dark);
   border-color: var(--color-primary-dark);
 }
 
-.workout-form__button--secondary {
+.modal-form__button--secondary {
   background: var(--background-page);
   color: var(--color-text-secondary);
   border-color: var(--color-border-input);
 }
 
-.workout-form__button--secondary:hover {
+.modal-form__button--secondary:hover {
   background: var(--background-hover);
   border-color: var(--color-border-hover);
 }
